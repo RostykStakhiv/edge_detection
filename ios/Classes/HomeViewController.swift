@@ -1,4 +1,4 @@
-import WeScan
+import WeScanCustom
 import Flutter
 import Foundation
 
@@ -25,9 +25,8 @@ class HomeViewController: UIViewController, ImageScannerControllerDelegate {
         // Your ViewController is responsible for dismissing the ImageScannerController
         scanner.dismiss(animated: true)
         
-
-        var imagePath = saveImage(image:results.scannedImage)
-     _result!(imagePath)
+        var imagePath = saveImage(image:results.croppedScan.image)
+        _result!(imagePath)
        self.dismiss(animated: true)   
     }
     
